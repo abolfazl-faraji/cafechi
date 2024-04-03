@@ -1,0 +1,19 @@
+.article-instagram{
+    width: 450px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+}
+.article-instagram-QR-code{
+    display: inline-block;
+    width: 100px;
+    position: absolute;
+    top: -68px;
+    left: 10px;
+}
+.article-instagram-caption{
+    text-align: left;
+    margin-left: 110px;
+}
