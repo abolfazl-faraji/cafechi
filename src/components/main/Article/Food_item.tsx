@@ -1,31 +1,42 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CountControlContext } from "../../../App";
+import { ThemeModeContext } from "../../../App";
 import "./style.css";
-function Food_item(attrs: {foodName: string; description: string; foodImage: any; price: number; count: number; mode:string;}){
+
+function Food_item(attrs:{
+    foodName: string;
+    description: string;
+    foodImage: any;
+    price: number;
+    count: number;
+}){
+
     let foodAvailablityClass = "available";
-    let mode = attrs.mode;
     const [foodCount, setFoodCount] = useState(attrs.count);
     if (foodCount === 0){
         foodAvailablityClass = "unavailable";
     }
+    const themeMode = useContext(ThemeModeContext);
+    const mode = useContext(CountControlContext);
     const handleScreenClick = () => {
-        if (mode === 'increase' && foodCount < attrs.count){
+        if (mode > 0  && foodCount < attrs.count){
             setFoodCount(foodCount + 1)
         }
-        else if(mode==='decrease' && foodCount > 0){
+        else if(mode < 0 && foodCount > 0){
             setFoodCount(foodCount - 1)
         }
         console.log(foodCount);
     }
     return(
-        <article className={"food-article " + foodAvailablityClass} onClick={handleScreenClick}>
-            <img className="article-food-image" src={attrs.foodImage} alt={attrs.foodName} />
+        <article className={"food-article-" + themeMode + " " + foodAvailablityClass} onClick={handleScreenClick}>
+            <img className={"article-food-image-" + themeMode} src={attrs.foodImage} alt={attrs.foodName} />
             <div className="article-desc">
-                <h3 className="article-food-name">{attrs.foodName}</h3>
-                <p className="article-food-description">{attrs.description}</p>
-                <span className="article-food-price">{attrs.price}</span>
+                <h3 className={"article-food-name-" + themeMode}>{attrs.foodName}</h3>
+                <p className={"article-food-description-" + themeMode}>{attrs.description}</p>
+                <span className={"article-food-price-" + themeMode}>{attrs.price}</span>
             </div>
-            {attrs.count < 0 && <span className="article-food-count"> &infin; </span>}
-            {attrs.count > 0 && <span className="article-food-count">{foodCount}</span>}
+            {foodCount < 0 && <span className={"article-food-count-" + themeMode}> &infin; </span>}
+            {foodCount > 0 && <span className={"article-food-count-" + themeMode}>{foodCount}</span>}
         </article>
     );
 }

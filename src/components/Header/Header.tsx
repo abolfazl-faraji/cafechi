@@ -1,13 +1,20 @@
 import QRCode from 'react-qr-code';
+import { ThemeModeContext } from '../../App';
+import { useContext } from 'react';
 import './style.css';
+
 function Header(attrs: { cafeName: string; instagram: string; logo: any;}) {
+
+    const themeMode = useContext(ThemeModeContext);
+
+
     return (
-        <header>
-            <div>
-            <img className='logo' src={attrs.logo} alt={attrs.cafeName} />
-            <h1>{attrs.cafeName}</h1>
+        <header className={'header-' + themeMode}>
+            <div className=''>
+                <img className='logo' src={attrs.logo} alt={attrs.cafeName} />
+                <h1 className={'cafe-name-' + themeMode}>{attrs.cafeName}</h1>
             </div>
-            <QRCode className="QRCafechi" value={'https://instagram.com/' + attrs.instagram}></QRCode>
+            <QRCode className="qr-cafechi" value={'https://instagram.com/' + attrs.instagram}></QRCode>
         </header>
     );
 }

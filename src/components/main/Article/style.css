@@ -1,17 +1,29 @@
-.food-article {
-    border: 5px solid rgb(255, 145, 0);
+.food-article-dark {
+    border: 5px solid #454545;
     border-radius: 100px;
     width: 450px;
     height: 110px;
     position: relative;
     margin: 40px;
+    text-align: right;
     direction: rtl;
     padding: 5px;
-    float: right;
+    display: inline-block;
 }
-
-.article-food-image {
-    border: 20px solid rgb(255, 145, 0);
+.food-article-light {
+    border: 5px solid #b0b0b0;
+    border-radius: 100px;
+    width: 450px;
+    height: 110px;
+    position: relative;
+    margin: 40px;
+    text-align: right;
+    direction: rtl;
+    padding: 5px;
+    display: inline-block;
+}
+.article-food-image-dark {
+    border: 20px solid #454545;
     border-radius: 50%;
     position: absolute;
     top: -40px;
@@ -19,28 +31,48 @@
     width: 150px;
     display: inline-block;
 }
-
-.article-desc{
-  margin-right: 150px;
-  margin-left: 150px;
+.article-food-image-light {
+    border: 20px solid #b0b0b0;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    right: -50px;
+    width: 150px;
+    display: inline-block;
+}
+.article-desc {
+  margin: 0px 150px 0px 120px;
   position: relative;
 }
-
-.article-food-name {
+.article-food-name-dark {
     margin-top: 5px;
     margin-bottom: 0px;
     font-size: 20px;
     font-weight: bold;
+    color: #f6f6f6;
+}
+.article-food-name-light {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3d3d3d;
 }
 
-.article-food-description {
+.article-food-description-dark {
     font-size: 15px;
     margin-top: 5px;
+    color: #d1d1d1;
 }
-
-.article-food-count {
+.article-food-description-light {
+    font-size: 15px;
+    margin-top: 5px;
+    color: #5d5d5d;
+}
+.article-food-count-dark {
     font-size: 70px;
-    background-color: orangered;
+    background-color: #454545;
+    color: #f6f6f6;
     padding: 5px;
     border-radius: 50%;
     display: inline-block;
@@ -51,16 +83,36 @@
     left: 20px;
     text-align: center;
 }
-
-.article-food-price {
+.article-food-count-light {
+    font-size: 70px;
+    background-color: #888888;
+    color: #3d3d3d;
+    padding: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    text-align: center;
+}
+.article-food-price-dark {
     font-size: 20px;
     position: absolute;
     bottom: -50px;
     left: 0px;
     top: 77.600px;
-
+    color: #f6f6f6;
 }
-
+.article-food-price-light {
+    font-size: 20px;
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    top: 77.600px;
+    color: #3d3d3d;
+}
 .unavailable{
     opacity: 0.4;
 }

@@ -1,18 +1,31 @@
-header{
-    height: 220px;
+.header-dark {
+    text-align: center;
+    background-color: #3d3d3d;
+    height: 210px;
     padding-top: 10px;
     position: relative;
+}
+.header-light {
     text-align: center;
+    background-color: #b0b0b0;
+    height: 210px;
+    padding-top: 10px;
+    position: relative;
 }
 .logo{
     width: 150px;
 }
-h1{
+.cafe-name-dark {
     margin-top: 0px;
+    color: #f6f6f6;
 }
-.QRCafechi{
+.cafe-name-light {
+    margin-top: 0px;
+    color: black;
+}
+.qr-cafechi{
     width: 150px;
     position: absolute;
-    top: -35px;
+    top: -20px;
     left: 15px;
 }
